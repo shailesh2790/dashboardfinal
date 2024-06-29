@@ -12,6 +12,9 @@ import sqlite3
 app = dash.Dash(__name__)
 app.title = "Interactive Dashboard"
 
+# Expose the Flask server instance for WSGI
+server = app.server
+
 # Set up the SQLite database
 conn = sqlite3.connect('uploaded_files.db')
 c = conn.cursor()
